@@ -1,0 +1,14 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      ticketServiceCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+
+  retry:
+    instances:
+      ticketServiceRetry:
+        maxAttempts: 3
+        waitDuration: 1s
